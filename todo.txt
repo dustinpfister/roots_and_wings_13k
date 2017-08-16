@@ -28,7 +28,6 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * Canvas.draw object added, which will contain a draw method for each application state.
 * canvas allowing for World status to be drawn on each tick via a Canvas.draw('game') call.
 
-
 0.3.x - Player ship movement
 
 * The player Ship object will be part of World module for now.
@@ -37,20 +36,20 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * draw ship method added in canvas.js.
 * The distance from home location variable increases as the players ship moves away from the home location.
 * Player speeds up and slows down (ws keys)
-!! -- Bookmark - anything below this needs to get done -- !!
-
-
-
 
 0.4.x - Planet objects
 
-* planets.js file added containing the Planet Class.
-* planets array added in World module.
-* internal generatePanents method added in World Module that generates Planets Class instances.
+* Planets array added in World module.
+* Using just objects for Planets for now (no class).
 * Home planet placed at (0,0).
-* inner, and outer rim of planets around (0,0).
+* Internal generatePanents method added in World Module that generates Planets Class instances.
+
+!! -- Bookmark - anything below this needs to get done -- !!
+
+* Just a simple draw all planets method in canvas.js for now.
+* Inner, and outer rim of planets around (0,0).
 * Three planet resources ore, air, and energy.
-* planet properties include resource multipliers.
+* Planet properties include resource multipliers.
 
 0.5.x - Planet state
 
@@ -79,8 +78,9 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * The amount of money the player receives depends on the type, amount, and distance from the home planet.
 
 
-0.x.x - Movement fix ( fix player movement so there is not a delay )
-0.x.x - multi key ( fix problem with multi key input)
+0.x.x - Movement delay fix ( fix player movement so there is not a delay )
+0.x.x - Multi key input fix ( fix problem with multi key input)
+
 
 !! 1.x - Wings game aspect !!
 
@@ -92,3 +92,15 @@ The wings aspect of the game has to do with going beyond the inner space of plan
 1.x.x - Weapon Class
 1.x.x - ship upgrades
 1.x.x - Jump Ability
+
+
+!! if I have time, and space !!
+
+x.x.x - Space Sectors
+
+* space sectors introduced in order to reduce the number of planets the game has to
+ loop over each game tick.
+* space divided into 5 * 5 view port size sectors
+* The game only loops over planets that are part of that sector
+* coming close to a sector will load planets from that sector
+* going far enough away from a sector will purge it's planets out.

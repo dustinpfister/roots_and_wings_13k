@@ -13,6 +13,23 @@ var World = (function () {
 
         d : 0,
 
+        planets : [],
+
+        generatePlanets : function () {
+
+            this.planets = [];
+
+            // and home world
+            this.planets.push({
+
+                x : 0,
+                y : 0,
+                size : 30
+
+            });
+
+        },
+
         // player ship object
         ship : {
 
