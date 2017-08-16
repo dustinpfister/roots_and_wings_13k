@@ -44,10 +44,10 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * Home planet placed at (0,0).
 * Internal genPanents method added in World Module that generates Planets Class instances.
 * Just a simple draw all planets method in canvas.js for now.
+* Inner, and outer rim of planets around (0,0).
+
 
 !! -- Bookmark - anything below this needs to get done -- !!
-
-* Inner, and outer rim of planets around (0,0).
 
 0.5.x - Planet state
 
