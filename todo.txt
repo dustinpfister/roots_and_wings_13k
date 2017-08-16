@@ -14,9 +14,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * frameRate, and lastTick values added in Main.js.
 * Frame rate caped at 30fps
 
-
-
-0.1.x The World module
+0.1.x - The World module
 
 * world.js file added containing a World module.
 * World.update method added and called on each frame tick during the 'game' application state.
@@ -26,7 +24,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
-0.2.x Canvas module, and event attachment
+0.2.x - Canvas module, and event attachment
 
 * canvas.js file added containing a Canvas module
 * Canvas.draw object added, which will contain a draw method for each application state.
@@ -53,7 +51,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * The distance from home location variable increases as the players ship moves away from the home location.
 
 
-0.5.x Planet objects
+0.5.x - Planet objects
 
 * planets.js file added containing the Planet Class.
 * planets array added in World module.
