@@ -54,7 +54,19 @@ var Canvas = (function () {
 
     },
 
-	
+    // draw info
+    drawInfo = function () {
+
+        var w = World.getStatus();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.textBaseline = 'top';
+        ctx.font = '20px courier';
+
+        ctx.fillText('distance: ' + w.d, 10, 10);
+
+    },
+
     // public api
     api = {
 
@@ -65,8 +77,9 @@ var Canvas = (function () {
 
                 var w = World.getStatus();
 
-				cls();
+                cls();
                 drawGrid(w.vpx % w.vpw / w.vpw, w.vpy % w.vph / w.vph);
+                drawInfo();
 
             }
 
