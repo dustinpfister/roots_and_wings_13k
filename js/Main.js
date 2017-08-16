@@ -22,7 +22,10 @@
 
             World.update();
 
-        }
+        },
+
+        // planet menu state
+        planetMenu : function () {}
 
     },
 
@@ -38,7 +41,7 @@
 
             // call the current state method
             state[currentState]();
-			Canvas.draw[currentState]();
+            Canvas.draw[currentState]();
 
             lastTick = new Date();
 
@@ -55,8 +58,6 @@
         World.userKeybordAction(e.keyCode);
 
     });
-
-
 
 }
     ());

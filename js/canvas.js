@@ -134,6 +134,15 @@ var Canvas = (function () {
                 drawShip();
                 drawInfo();
 
+            },
+
+            planetMenu : function () {
+
+                cls();
+
+                ctx.fillStyle = '#00ffff';
+                ctx.fillText('planet menu: ', 10, 10);
+
             }
 
         }
