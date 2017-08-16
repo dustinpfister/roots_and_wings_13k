@@ -21,13 +21,10 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * world.js file added containing a World module.
 * World.update method added and called on each frame tick during the 'game' application state.
 * World.new method added that will set up initial World Conditions.
+* world.js will contain the current state information with map position, and view port data
+* world status will change by way of simple user input for now.
 
 !! -- Bookmark - anything below this needs to get done -- !!
-
-* world.js will contain the current state information with map position, and view port data
-* The player Ship object will be part of World module for now.
-
-* world status will change by way of simulated user input in World.update for now.
 
 0.2.x Canvas module, and event attachment
 
@@ -47,6 +44,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 0.4.x - Player ship movement
 
+* The player Ship object will be part of World module for now.
 * Players ship starts at the home location
 * The player is able to move the ship around (wasd keys)
 * Player speeds up with w key
