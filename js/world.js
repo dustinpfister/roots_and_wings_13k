@@ -15,7 +15,7 @@ var World = (function () {
 
         planets : [],
 
-        generatePlanets : function () {
+        genPlanets : function () {
 
             this.planets = [];
 
@@ -126,6 +126,8 @@ var World = (function () {
         newGame : function () {
 
             console.log('world.js: new world');
+
+            status.genPlanets();
 
             // default heading
             status.ship.setHome();

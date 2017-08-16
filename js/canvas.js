@@ -80,6 +80,29 @@ var Canvas = (function () {
 
     },
 
+    // just a simple draw all planets method (very slow)
+    drawPlanets = function () {
+
+        var s = World.getStatus(),
+        pl = s.planets;
+
+        ctx.fillStyle = '#00ffff';
+        ctx.strokeStyle = '#ffffff';
+        pl.forEach(function (p) {
+
+            ctx.beginPath();
+            ctx.closePath();
+            ctx.arc(
+                s.vpx + s.vpw + p.x,
+                s.vpy + s.vph + p.y,
+                p.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+
+        });
+
+    },
+
     // draw info
     drawInfo = function () {
 
@@ -105,6 +128,7 @@ var Canvas = (function () {
 
                 cls();
                 drawGrid(w.vpx % w.vpw / w.vpw, w.vpy % w.vph / w.vph);
+                drawPlanets();
                 drawShip();
                 drawInfo();
 

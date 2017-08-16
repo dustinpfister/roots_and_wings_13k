@@ -42,7 +42,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * Planets array added in World module.
 * Using just objects for Planets for now (no class).
 * Home planet placed at (0,0).
-* Internal generatePanents method added in World Module that generates Planets Class instances.
+* Internal genPanents method added in World Module that generates Planets Class instances.
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
