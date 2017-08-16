@@ -1,0 +1,94 @@
+Roots and Wings
+
+!! 0.x - Roots Game Aspect - !!
+
+The roots aspect of roots and wings has to do with gathering, and selling resources. Resources are needed to buy both planet, and ship upgrades. This aspect of the game has to do with staying near the home planet, where there is no enemy activity, making money.
+
+0.0.x - The State machine.
+
+* Main.js file added that will contain the state machine.
+* Game start machine (main.js) providing basic app structure.
+* just a start, and game application state for now.
+* main loop starts, and just logs 'ready to rock' in the console each frame tick.
+
+0.1.x The World module
+
+* world.js file added containing a World module.
+* world.js will contain the current state information with map position, and view port data
+* The player Ship object will be part of World module for now.
+* World.update method will ba called on each frame tick during the 'game' application state.
+* World.new method sets up initial World Conditions.
+* world status will change by way of simulated user input in World.update for now.
+
+0.2.x Canvas module, and event attachment
+
+* canvas.js file added containing a Canvas module
+* Canvas.draw object added, which will contain a draw method for each application state.
+* canvas allowing for World status to be drawn on each tick via a Canvas.draw('game') call.
+
+0.3.x - Event attachment, and handling.
+
+* Main.js turned into a Main module.
+* Main.userAction method added.
+* The userAction method will update World status based on user input.
+* Event handler added in main.js that handles keybord input
+* Canvas.attachEvent method added.
+* Event handler added in main.js that handles mouse input.
+* Mouse and keyboard methods can be used to pan around the map.
+
+0.4.x - Player ship movement
+
+* Players ship starts at the home location
+* The player is able to move the ship around (wasd keys)
+* Player speeds up with w key
+* player slows down with s key
+* player changes heading with a, and d keys.
+* The distance from home location variable increases as the players ship moves away from the home location.
+
+
+0.5.x Planet objects
+
+* planets.js file added containing the Planet Class.
+* planets array added in World module.
+* internal generatePanents method added in World Module that generates Planets Class instances.
+* Home planet placed at (0,0).
+* inner, and outer rim of planets around (0,0).
+* Three planet resources ore, air, and energy.
+* planet properties include resource multipliers.
+
+
+0.6.x - Planet state
+
+* money property added to ship object.
+* player starts with a small amount of starting money.
+* The player can land at friendly, or unclaimed planets.
+* landing at a planet results in entering a planet game state
+* The planet game state displays a planet menu.
+* If the planet is unclaimed the player can clam the planet as theirs by building something in the planet menu.
+* Build options include a just a star port for now.
+
+
+0.7.x - Star Ports, and upgrades
+
+* once a star port is built the planet will start producing resources.
+* The starting type, production rate, and capacity depends on the planet.
+* planet upgrades unlock after building a star port
+* upgrade a planets resource output by building one of three buildings (ore extractor, teraformer, and power cell plant).
+
+0.8.x - Trade
+
+* once a star port is built on a planet trade is possible with it.
+* The player can load their ship with resources from a planet.
+* The player can then transport those resources back home.
+* once back home the player can sell those resources.
+* The amount of money the player receives depends on the type, amount, and distance from the home planet.
+
+!! 1.x - Wings game aspect !!
+
+The wings aspect of the game has to do with going beyond the inner space of planets where the far more valuable outer space of plants is. However the player will begin to run into enemies that become increasingly ore difficult depending on the distance from the home world.
+
+1.x.x - ship.js file
+1.x.x - Enemy's added, and basic enemy AI
+1.x.x - Weapon Class
+1.x.x - ship upgrades
+1.x.x - Jump Ability
