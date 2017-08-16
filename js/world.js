@@ -19,6 +19,9 @@ var World = (function () {
             heading : 25,
             speed : 5,
 
+            x : 0, // the view port relative ship position
+            y : 0,
+
             setHome : function () {
 
                 status.vpx = 0 - status.vpw / 2;
@@ -26,6 +29,9 @@ var World = (function () {
 
                 this.heading = 25;
                 this.speed = 5;
+
+                this.x = status.vpw / 2;
+                this.y = status.vph / 2;
 
             },
 
@@ -59,8 +65,8 @@ var World = (function () {
 
             this.d = distance(
 
-                    this.vpx + this.vpw / 2,
-                    this.vpy + this.vph / 2,
+                    this.vpx + this.ship.x,
+                    this.vpy + this.ship.y,
                     0, 0);
 
             this.vpx += Math.cos(radian) * this.ship.speed;
