@@ -11,7 +11,7 @@
 
             console.log('start state');
 
-            World.new();
+            World.newGame();
 
             // change to game state.
             currentState = 'game';
