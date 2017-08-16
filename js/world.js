@@ -24,9 +24,32 @@ var World = (function () {
 
                 x : 0,
                 y : 0,
-                size : 30
+                size : 50
 
             });
+
+            // inner rim
+            var d = 1000,
+            pl,
+            r,
+            p = 0;
+            while (p < 80) {
+
+                r = Math.PI / 40 * p;
+
+                pl = {
+
+                    x : Math.cos(r) * d,
+                    y : Math.sin(r) * d,
+                    size : 30
+
+                };
+
+                this.planets.push(pl);
+
+                p += 1;
+
+            }
 
         },
 
