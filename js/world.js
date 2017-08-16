@@ -10,10 +10,32 @@ var World = (function () {
 
         update : function () {
 
-            var radian = Math.PI / 180 * this.ship.heading;
+            var radian = Math.PI / 50 * this.ship.heading;
 
             this.vpx += Math.cos(radian) * this.ship.speed;
             this.vpy += Math.sin(radian) * this.ship.speed;
+
+        },
+
+        // ship heading change
+        headingChange : function (down) {
+
+            if (down) {
+
+                this.ship.heading -= 1;
+
+            } else {
+
+                this.ship.heading += 1;
+
+            }
+
+            if (this.ship.heading < 0) {
+                this.ship.heading = 99;
+            }
+            if (this.ship.heading > 100) {
+                this.ship.heading = 0;
+            }
 
         }
 
@@ -55,34 +77,38 @@ var World = (function () {
 
             console.log(keyCode);
 
-            /*
             switch (keyCode) {
 
             case 68: // d
 
-            status.vpx += 5;
 
-            break;
+                status.headingChange()
+
+                //status.vpx += 5;
+
+                break;
 
             case 65: // a
 
-            status.vpx -= 5;
 
-            break;
+                status.headingChange(true);
+
+                //status.vpx -= 5;
+
+                break;
 
             case 87: // w
 
-            status.vpy -= 5;
+                //status.vpy -= 5;
 
-            break;
+                break;
 
             case 83: // s
 
-            status.vpy += 5;
-            break;
+                //status.vpy += 5;
+                break;
 
             }
-             */
 
         },
 
