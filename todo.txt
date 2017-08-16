@@ -34,12 +34,13 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * The player Ship object will be part of World module for now.
 * Players ship starts at the home location
 * The player is able to change ship heading (ad keys)
-
+* draw ship method added in canvas.js.
+* The distance from home location variable increases as the players ship moves away from the home location.
+* Player speeds up and slows down (ws keys)
 !! -- Bookmark - anything below this needs to get done -- !!
 
 
-* Player speeds up and slows down (ws keys)
-* The distance from home location variable increases as the players ship moves away from the home location.
+
 
 0.4.x - Planet objects
 
@@ -76,6 +77,10 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * The player can then transport those resources back home.
 * once back home the player can sell those resources.
 * The amount of money the player receives depends on the type, amount, and distance from the home planet.
+
+
+0.x.x - Movement fix ( fix player movement so there is not a delay )
+0.x.x - multi key ( fix problem with multi key input)
 
 !! 1.x - Wings game aspect !!
 

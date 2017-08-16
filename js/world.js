@@ -55,6 +55,33 @@ var World = (function () {
                     this.heading = 0;
                 }
 
+            },
+
+            // speed change
+            speedChange : function (down) {
+
+                if (down) {
+
+                    this.speed -= 1;
+
+                } else {
+
+                    this.speed += 1;
+
+                }
+
+                if (this.speed >= 11) {
+
+                    this.speed = 10;
+
+                }
+
+                if (this.speed <= 0) {
+
+                    this.speed = 1;
+
+                }
+
             }
 
         },
@@ -128,11 +155,17 @@ var World = (function () {
 
                 //status.vpy -= 5;
 
+
+                status.ship.speedChange();
+
                 break;
 
             case 83: // s
 
                 //status.vpy += 5;
+
+                status.ship.speedChange(true);
+
                 break;
 
             }
