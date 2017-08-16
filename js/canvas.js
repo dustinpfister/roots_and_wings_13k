@@ -54,6 +54,32 @@ var Canvas = (function () {
 
     },
 
+    // draw ship method
+    drawShip = function () {
+
+        var w = World.getStatus(),
+        s = w.ship;
+
+        ctx.save();
+
+        ctx.translate(s.x, s.y);
+        ctx.rotate(Math.PI / 50 * s.heading);
+        ctx.strokeStyle = '#00ff00';
+        ctx.beginPath();
+        ctx.arc(0, 0, 10, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.stroke();
+
+        // heading indicator
+        ctx.strokeStyle = '#ff0000';
+        ctx.beginPath();
+        ctx.arc(0, 0, 15, Math.PI - .5, Math.PI + .5);
+        ctx.stroke();
+
+        ctx.restore();
+
+    },
+
     // draw info
     drawInfo = function () {
 
@@ -79,6 +105,7 @@ var Canvas = (function () {
 
                 cls();
                 drawGrid(w.vpx % w.vpw / w.vpw, w.vpy % w.vph / w.vph);
+                drawShip();
                 drawInfo();
 
             }
