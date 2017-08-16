@@ -38,6 +38,7 @@
 
             // call the current state method
             state[currentState]();
+			Canvas.draw[currentState]();
 
             lastTick = new Date();
 

@@ -11,11 +11,46 @@ var Canvas = (function () {
     // just append to body
     document.body.appendChild(canvas);
 
-    // clear scrren
+    // clear screen
     var cls = function () {
 
         ctx.fillStyle = '#000000';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    },
+
+    // draw gird method
+    drawGrid = function (xRatio, yRatio) {
+
+        var cellSize = 128,
+        w = 5,
+        h = 4,
+        sx,
+        sy;
+
+        // defaulting to zero
+        xRatio = xRatio || 0;
+        yRatio = yRatio || 0;
+
+        sx = -cellSize + cellSize * xRatio;
+        sy = -cellSize + cellSize * yRatio;
+
+        y = sy;
+
+        ctx.strokeStyle = '#808080';
+        while (y < cellSize * h) {
+
+            x = sx;
+            while (x < cellSize * w) {
+
+                ctx.strokeRect(x, y, cellSize, cellSize);
+
+                x += cellSize;
+            }
+
+            y += cellSize;
+
+        }
 
     },
 
@@ -25,7 +60,11 @@ var Canvas = (function () {
         draw : {
 
             start : function () {},
-            game : function () {}
+            game : function () {
+
+                drawGrid();
+
+            }
 
         }
 
