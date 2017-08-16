@@ -17,7 +17,7 @@ var World = (function () {
 
         planets : [],
 
-		//if over a planet return that planet
+        //if over a planet return that planet
         onPlanet : function () {
 
             var i = this.planets.length,
@@ -245,6 +245,12 @@ var World = (function () {
                 //status.vpy += 5;
 
                 status.ship.speedChange(true);
+
+                break;
+
+            case 76: // l
+
+                console.log(status.onPlanet());
 
                 break;
 
