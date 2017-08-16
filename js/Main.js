@@ -11,6 +11,8 @@
 
             console.log('start state');
 
+            World.new();
+
             // change to game state.
             currentState = 'game';
 
@@ -18,7 +20,7 @@
 
         game : function () {
 
-            console.log('ready to rock');
+            World.update();
 
         }
 
