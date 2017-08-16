@@ -87,6 +87,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 The wings aspect of the game has to do with going beyond the inner space of planets where the far more valuable outer space of plants is. However the player will begin to run into enemies that become increasingly ore difficult depending on the distance from the home world.
 
+1.x.x - title screen
 1.x.x - ship.js file
 1.x.x - Enemy's added, and basic enemy AI
 1.x.x - Weapon Class
