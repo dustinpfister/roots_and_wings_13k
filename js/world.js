@@ -39,7 +39,7 @@ var World = (function () {
 
             }
 
-            return {};
+            return false;
 
         },
 
@@ -250,7 +250,17 @@ var World = (function () {
 
             case 76: // l
 
-                console.log(status.onPlanet());
+                var p = status.onPlanet();
+
+                console.log(p);
+
+                if (p) {
+
+                    console.log('planet menu state');
+
+                    Main.changeState('planetMenu');
+
+                }
 
                 break;
 

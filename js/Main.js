@@ -1,4 +1,4 @@
-(function () {
+var Main = (function () {
 
     var currentState = 'start',
     frameRate = 1000 / 30, // 30 fps
@@ -58,6 +58,17 @@
         World.userKeybordAction(e.keyCode);
 
     });
+
+    // public api
+    return {
+
+        changeState : function (state) {
+
+            currentState = state;
+
+        }
+
+    }
 
 }
     ());
