@@ -22,25 +22,15 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * world.js will contain the current state information with map position, and view port data
 * world status will change by way of simple user input for now.
 
-!! -- Bookmark - anything below this needs to get done -- !!
-
 0.2.x - Canvas module, and event attachment
 
 * canvas.js file added containing a Canvas module
 * Canvas.draw object added, which will contain a draw method for each application state.
 * canvas allowing for World status to be drawn on each tick via a Canvas.draw('game') call.
 
-0.3.x - Event attachment, and handling.
+!! -- Bookmark - anything below this needs to get done -- !!
 
-* Main.js turned into a Main module.
-* Main.userAction method added.
-* The userAction method will update World status based on user input.
-* Event handler added in main.js that handles keybord input
-* Canvas.attachEvent method added.
-* Event handler added in main.js that handles mouse input.
-* Mouse and keyboard methods can be used to pan around the map.
-
-0.4.x - Player ship movement
+0.3.x - Player ship movement
 
 * The player Ship object will be part of World module for now.
 * Players ship starts at the home location
@@ -50,8 +40,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * player changes heading with a, and d keys.
 * The distance from home location variable increases as the players ship moves away from the home location.
 
-
-0.5.x - Planet objects
+0.4.x - Planet objects
 
 * planets.js file added containing the Planet Class.
 * planets array added in World module.
@@ -61,8 +50,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * Three planet resources ore, air, and energy.
 * planet properties include resource multipliers.
 
-
-0.6.x - Planet state
+0.5.x - Planet state
 
 * money property added to ship object.
 * player starts with a small amount of starting money.
@@ -73,14 +61,14 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * Build options include a just a star port for now.
 
 
-0.7.x - Star Ports, and upgrades
+0.6.x - Star Ports, and upgrades
 
 * once a star port is built the planet will start producing resources.
 * The starting type, production rate, and capacity depends on the planet.
 * planet upgrades unlock after building a star port
 * upgrade a planets resource output by building one of three buildings (ore extractor, teraformer, and power cell plant).
 
-0.8.x - Trade
+0.7.x - Trade
 
 * once a star port is built on a planet trade is possible with it.
 * The player can load their ship with resources from a planet.

@@ -6,3 +6,4 @@ This is my 2017 submission to [js13kgames](http://js13kgames.com/)
 
 0.0.4 - State machine in place
 0.1.6 - World Module
+0.2.3 - Canvas Module

@@ -4,8 +4,18 @@ var World = (function () {
 
         vpw : 640, // view port width and height
         vph : 480,
-        ship : {}
+
         // player ship object
+        ship : {},
+
+        update : function () {
+
+            var radian = Math.PI / 180 * this.ship.heading;
+
+            this.vpx += Math.cos(radian) * this.ship.speed;
+            this.vpy += Math.sin(radian) * this.ship.speed;
+
+        }
 
     };
 
@@ -19,14 +29,24 @@ var World = (function () {
             status.vpx = 0 - status.vpw / 2;
             status.vpy = 0 - status.vph / 2;
 
+            // default heading
+            status.ship = {
+
+                heading : 90,
+                speed : 5
+
+            }
+
         },
 
         // update the world
         update : function () {
 
             //console.log('world.js: tick');
-            console.log(status.vpx);
+            //console.log(status.vpx);
             //console.log();
+
+            status.update();
 
         },
 
@@ -35,32 +55,34 @@ var World = (function () {
 
             console.log(keyCode);
 
+            /*
             switch (keyCode) {
 
             case 68: // d
 
-                status.vpx += 5;
+            status.vpx += 5;
 
-                break;
+            break;
 
             case 65: // a
 
-                status.vpx -= 5;
+            status.vpx -= 5;
 
-                break;
+            break;
 
             case 87: // w
 
-                status.vpy -= 5;
+            status.vpy -= 5;
 
-                break;
+            break;
 
             case 83: // s
 
-                status.vpy += 5;
-                break;
+            status.vpy += 5;
+            break;
 
             }
+             */
 
         },
 
