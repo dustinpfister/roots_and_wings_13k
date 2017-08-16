@@ -22,8 +22,8 @@ var World = (function () {
             r,
             p = 0;
 
-            pc = pc | 50;
-            d = d | 1000;
+            pc = pc || 50;
+            d = d || 1000;
 
             while (p < pc) {
 
@@ -59,8 +59,8 @@ var World = (function () {
 
             });
 
-            this.genRim();
-            this.genRim(10000);
+            this.genRim(30,1000);
+            this.genRim(120,10000);
 
         },
 
