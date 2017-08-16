@@ -6,7 +6,44 @@ var World = (function () {
         vph : 480,
 
         // player ship object
-        ship : {},
+        ship : {
+
+            heading : 25,
+            speed : 5,
+
+            setHome : function () {
+
+                status.vpx = 0 - status.vpw / 2;
+                status.vpy = 0 - status.vph / 2;
+
+                this.heading = 25;
+                this.speed = 5;
+
+            },
+
+            // ship heading change
+            headingChange : function (down) {
+
+                if (down) {
+
+                    this.heading -= 1;
+
+                } else {
+
+                    this.heading += 1;
+
+                }
+
+                if (this.heading < 0) {
+                    this.heading = 99;
+                }
+                if (this.heading > 100) {
+                    this.heading = 0;
+                }
+
+            }
+
+        },
 
         update : function () {
 
@@ -14,28 +51,6 @@ var World = (function () {
 
             this.vpx += Math.cos(radian) * this.ship.speed;
             this.vpy += Math.sin(radian) * this.ship.speed;
-
-        },
-
-        // ship heading change
-        headingChange : function (down) {
-
-            if (down) {
-
-                this.ship.heading -= 1;
-
-            } else {
-
-                this.ship.heading += 1;
-
-            }
-
-            if (this.ship.heading < 0) {
-                this.ship.heading = 99;
-            }
-            if (this.ship.heading > 100) {
-                this.ship.heading = 0;
-            }
 
         }
 
@@ -48,16 +63,8 @@ var World = (function () {
 
             console.log('world.js: new world');
 
-            status.vpx = 0 - status.vpw / 2;
-            status.vpy = 0 - status.vph / 2;
-
             // default heading
-            status.ship = {
-
-                heading : 90,
-                speed : 5
-
-            }
+            status.ship.setHome();
 
         },
 
@@ -82,7 +89,7 @@ var World = (function () {
             case 68: // d
 
 
-                status.headingChange()
+                status.ship.headingChange()
 
                 //status.vpx += 5;
 
@@ -91,7 +98,7 @@ var World = (function () {
             case 65: // a
 
 
-                status.headingChange(true);
+                status.ship.headingChange(true);
 
                 //status.vpx -= 5;
 
