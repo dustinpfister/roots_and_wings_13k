@@ -17,6 +17,32 @@ var World = (function () {
 
         planets : [],
 
+		//if over a planet return that planet
+        onPlanet : function () {
+
+            var i = this.planets.length,
+            p;
+            while (i--) {
+
+                p = this.planets[i];
+
+                if (distance(
+
+                        this.vpx + this.ship.x,
+                        this.vpy + this.ship.y,
+                        p.x,
+                        p.y) <= p.size) {
+
+                    return p;
+
+                }
+
+            }
+
+            return {};
+
+        },
+
         // generate a rim of planets
         genRim : function (pc, d) {
 
