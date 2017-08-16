@@ -28,16 +28,17 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * Canvas.draw object added, which will contain a draw method for each application state.
 * canvas allowing for World status to be drawn on each tick via a Canvas.draw('game') call.
 
-!! -- Bookmark - anything below this needs to get done -- !!
 
 0.3.x - Player ship movement
 
 * The player Ship object will be part of World module for now.
 * Players ship starts at the home location
-* The player is able to move the ship around (wasd keys)
-* Player speeds up with w key
-* player slows down with s key
-* player changes heading with a, and d keys.
+* The player is able to change ship heading (ad keys)
+
+!! -- Bookmark - anything below this needs to get done -- !!
+
+
+* Player speeds up and slows down (ws keys)
 * The distance from home location variable increases as the players ship moves away from the home location.
 
 0.4.x - Planet objects

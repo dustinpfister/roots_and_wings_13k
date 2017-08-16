@@ -54,6 +54,7 @@ var Canvas = (function () {
 
     },
 
+	
     // public api
     api = {
 

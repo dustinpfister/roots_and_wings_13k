@@ -1,9 +1,17 @@
 var World = (function () {
 
-    var status = {
+    var distance = function (x1, y1, x2, y2) {
+
+        return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+
+    },
+
+    status = {
 
         vpw : 640, // view port width and height
         vph : 480,
+
+        d : 0,
 
         // player ship object
         ship : {
@@ -48,6 +56,12 @@ var World = (function () {
         update : function () {
 
             var radian = Math.PI / 50 * this.ship.heading;
+
+            this.d = distance(
+
+                    this.vpx + this.vpw / 2,
+                    this.vpy + this.vph / 2,
+                    0, 0);
 
             this.vpx += Math.cos(radian) * this.ship.speed;
             this.vpy += Math.sin(radian) * this.ship.speed;
