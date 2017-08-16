@@ -1,7 +1,7 @@
 (function () {
 
     var currentState = 'start',
-    frameRate = 1000 / 30, // 30 fps
+    frameRate = 1000 / 1, // 30 fps
     lastTick = new Date(0),
 
     state = {

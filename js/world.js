@@ -3,7 +3,9 @@ var World = (function () {
     var status = {
 
         vpw : 640, // view port width and height
-        vph : 480
+        vph : 480,
+        ship : {}
+        // player ship object
 
     };
 
@@ -25,6 +27,13 @@ var World = (function () {
             console.log('world.js: tick');
             console.log(status);
             console.log();
+
+        },
+
+        // return a reference to the status object
+        getStatus : function () {
+
+            return status;
 
         }
 
