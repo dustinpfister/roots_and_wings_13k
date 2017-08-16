@@ -48,5 +48,14 @@
     // hold onto your butts
     loop();
 
+    // events
+    window.addEventListener('keydown', function (e) {
+
+        World.userKeybordAction(e.keyCode);
+
+    });
+
+
+
 }
     ());

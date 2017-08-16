@@ -24,9 +24,43 @@ var World = (function () {
         // update the world
         update : function () {
 
-            console.log('world.js: tick');
-            console.log(status);
-            console.log();
+            //console.log('world.js: tick');
+            console.log(status.vpx);
+            //console.log();
+
+        },
+
+        // user action method
+        userKeybordAction : function (keyCode) {
+
+            console.log(keyCode);
+
+            switch (keyCode) {
+
+            case 68: // d
+
+                status.vpx += 5;
+
+                break;
+
+            case 65: // a
+
+                status.vpy -= 5;
+
+                break;
+
+            case 87: // w
+
+                status.vpy -= 5;
+
+                break;
+
+            case 83: // s
+
+                status.vpy += 5;
+                break;
+
+            }
 
         },
 
