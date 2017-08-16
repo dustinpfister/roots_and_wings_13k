@@ -15,27 +15,19 @@ var World = (function () {
 
         planets : [],
 
-        genPlanets : function () {
+        // generate a rim of planets
+        genRim : function (pc, d) {
 
-            this.planets = [];
-
-            // and home world
-            this.planets.push({
-
-                x : 0,
-                y : 0,
-                size : 50
-
-            });
-
-            // inner rim
-            var d = 1000,
-            pl,
+            var pl,
             r,
             p = 0;
-            while (p < 80) {
 
-                r = Math.PI / 40 * p;
+            pc = pc | 50;
+            d = d | 1000;
+
+            while (p < pc) {
+
+                r = Math.PI / (pc / 2) * p;
 
                 pl = {
 
@@ -50,6 +42,25 @@ var World = (function () {
                 p += 1;
 
             }
+
+        },
+
+        // generate planets
+        genPlanets : function () {
+
+            this.planets = [];
+
+            // and home world
+            this.planets.push({
+
+                x : 0,
+                y : 0,
+                size : 50
+
+            });
+
+            this.genRim();
+            this.genRim(10000);
 
         },
 
@@ -68,7 +79,7 @@ var World = (function () {
                 status.vpy = 0 - status.vph / 2;
 
                 this.heading = 25;
-                this.speed = 5;
+                this.speed = 10;
 
                 this.x = status.vpw / 2;
                 this.y = status.vph / 2;
@@ -110,9 +121,9 @@ var World = (function () {
 
                 }
 
-                if (this.speed >= 11) {
+                if (this.speed >= 21) {
 
-                    this.speed = 10;
+                    this.speed = 20;
 
                 }
 
