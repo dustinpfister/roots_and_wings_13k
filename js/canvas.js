@@ -62,7 +62,10 @@ var Canvas = (function () {
             start : function () {},
             game : function () {
 
-                drawGrid();
+                var w = World.getStatus();
+
+				cls();
+                drawGrid(w.vpx % w.vpw / w.vpw, w.vpy % w.vph / w.vph);
 
             }
 

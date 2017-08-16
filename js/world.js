@@ -45,7 +45,7 @@ var World = (function () {
 
             case 65: // a
 
-                status.vpy -= 5;
+                status.vpx -= 5;
 
                 break;
 
