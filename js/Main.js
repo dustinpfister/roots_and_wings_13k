@@ -1,6 +1,8 @@
 (function () {
 
     var currentState = 'start',
+    frameRate = 1000 / 30, // 30 fps
+    lastTick = new Date(0),
 
     state = {
 
@@ -25,11 +27,19 @@
     // main app loop
     loop = function () {
 
+        var now = new Date();
+
         // assuming the browser supports requestAnimationFrame.
         requestAnimationFrame(loop);
 
-        // call the current state method
-        state[currentState]();
+        if (now - lastTick >= frameRate) {
+
+            // call the current state method
+            state[currentState]();
+
+            lastTick = new Date();
+
+        }
 
     };
 

@@ -6,10 +6,15 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 0.0.x - The State machine.
 
+* index.html file added.
 * Main.js file added that will contain the state machine.
 * Game start machine (main.js) providing basic app structure.
 * just a start, and game application state for now.
 * main loop starts, and just logs 'ready to rock' in the console each frame tick.
+
+* frameRate, and lastTick values added in Main.js.
+* Frame rate caped at 30fps
+
 
 0.1.x The World module
 
