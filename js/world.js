@@ -11,6 +11,8 @@ var World = (function () {
         vpw : 640, // view port width and height
         vph : 480,
 
+        money : 1000,
+
         d : 0,
 
         planets : [],
@@ -24,7 +26,6 @@ var World = (function () {
 
             pc = pc || 50;
             d = d || 1000;
-
             while (p < pc) {
 
                 r = Math.PI / (pc / 2) * p;
@@ -59,8 +60,8 @@ var World = (function () {
 
             });
 
-            this.genRim(30,1000);
-            this.genRim(120,10000);
+            this.genRim(30, 1000);
+            this.genRim(120, 10000);
 
         },
 

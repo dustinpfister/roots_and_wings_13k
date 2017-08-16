@@ -110,9 +110,11 @@ var Canvas = (function () {
 
         ctx.fillStyle = '#ffffff';
         ctx.textBaseline = 'top';
-        ctx.font = '20px courier';
+        ctx.font = '10px courier';
 
         ctx.fillText('distance: ' + w.d, 10, 10);
+        ctx.fillText('speed: ' + w.ship.speed, 10, 20);
+        ctx.fillText('money: ' + w.money, 10, 30);
 
     },
 
