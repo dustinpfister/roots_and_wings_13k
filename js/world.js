@@ -14,6 +14,12 @@ var Planet = function (opt) {
     this._size = opt._size || 60;
     this._starPort = opt._starPort === undefined ? true : opt._starPort;
 
+    this._ore = 0;
+    this._oreMax = 10; // max ore
+    this._oreRate = 10000; // 1 ore every ten seconds
+
+    this._lastUpdate = new Date();
+
 };
 
 // what is the cost of the planets startPort
@@ -226,6 +232,8 @@ var World = (function () {
                 if (status.money >= cost) {
 
                     status.money -= cost;
+
+                    p._lastUpdate = new Date();
                     p._starPort = true;
 
                     console.log('bought star port');
@@ -302,8 +310,6 @@ var World = (function () {
             case 76: // l
 
                 var p = status.onPlanet();
-
-                console.log(p);
 
                 if (p) {
 
