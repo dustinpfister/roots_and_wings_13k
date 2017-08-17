@@ -9,6 +9,7 @@ var Planet = function (opt) {
 
     opt = opt || {};
 
+    this._id = opt._id || 'home';
     this._x = opt._x || 0;
     this._y = opt._y || 0;
     this._size = opt._size || 60;
@@ -87,6 +88,7 @@ var World = (function () {
 
                 pl = new Planet({
 
+                        _id : 'rim_' + p,
                         _x : Math.cos(r) * d,
                         _y : Math.sin(r) * d,
                         _size : 30,
@@ -285,7 +287,7 @@ var World = (function () {
             if (p._starPort) {
 
                 // update curent selected planet
-                if (t > p._oreRate) {
+                if (t > p._oreRate && p._id != 'home') {
 
                     deltaOre = Math.floor(t / p._oreRate);
 
