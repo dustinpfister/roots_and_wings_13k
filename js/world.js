@@ -9,10 +9,10 @@ var Planet = function (opt) {
 
     opt = opt || {};
 
-    this.x = opt.x || 0;
-    this.y = opt.y || 0;
-    this.size = opt.size || 60;
-    this.starPort = opt.starPort || true;
+    this._x = opt._x || 0;
+    this._y = opt._y || 0;
+    this._size = opt._size || 60;
+    this._starPort = opt._starPort || true;
 
 };
 
@@ -58,8 +58,8 @@ var World = (function () {
 
                         this.vpx + this.ship.x,
                         this.vpy + this.ship.y,
-                        p.x,
-                        p.y) <= p.size) {
+                        p._x,
+                        p._y) <= p._size) {
 
                     return p;
 
@@ -86,10 +86,10 @@ var World = (function () {
 
                 pl = new Planet({
 
-                        x : Math.cos(r) * d,
-                        y : Math.sin(r) * d,
-                        size : 30,
-                        startPort : false
+                        _x : Math.cos(r) * d,
+                        _y : Math.sin(r) * d,
+                        _size : 30,
+                        _startPort : false
 
                     });
 

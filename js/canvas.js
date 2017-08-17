@@ -93,9 +93,9 @@ var Canvas = (function () {
             ctx.beginPath();
             ctx.closePath();
             ctx.arc(
-                s.vpx + s.vpw + p.x,
-                s.vpy + s.vph + p.y,
-                p.size, 0, Math.PI * 2);
+                s.vpx + s.vpw + p._x,
+                s.vpy + s.vph + p._y,
+                p._size, 0, Math.PI * 2);
             ctx.fill();
             ctx.stroke();
 
