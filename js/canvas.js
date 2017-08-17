@@ -163,7 +163,7 @@ var Canvas = (function () {
 
                 cls();
 
-                ctx.fillStyle = '#00ffff';
+                ctx.fillStyle = 'rgba(0,255,255,.6)';
                 ctx.font = '10px courier';
 
                 ctx.fillText('planet menu: ', 10, 10);

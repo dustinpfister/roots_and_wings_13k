@@ -15,7 +15,7 @@ var Planet = function (opt) {
     this._size = opt._size || 60;
     this._starPort = opt._starPort === undefined ? true : opt._starPort;
 
-    this._ore = 0;
+    this._ore = opt._ore || 10;
     this._oreMax = 10; // max ore
     this._oreRate = 3000; // 1 ore every ten seconds
 
@@ -39,7 +39,7 @@ var World = (function () {
         vpw : 640, // view port width and height
         vph : 480,
 
-        money : 10000,
+        money : 500,
 
         d : 0,
 
@@ -88,10 +88,11 @@ var World = (function () {
 
                 pl = new Planet({
 
-                        _id : 'rim_' + p,
+                        _id : 'rim_d' + d + '_' + p,
                         _x : Math.cos(r) * d,
                         _y : Math.sin(r) * d,
                         _size : 30,
+						_ore:0,
                         _starPort : false
 
                     });
@@ -132,7 +133,7 @@ var World = (function () {
                 status.vpy = 0 - status.vph / 2;
 
                 this.heading = 25;
-                this.speed = 10;
+                this.speed = 0;
 
                 this.x = status.vpw / 2;
                 this.y = status.vph / 2;
@@ -287,19 +288,30 @@ var World = (function () {
             if (p._starPort) {
 
                 // update curent selected planet
-                if (t > p._oreRate && p._id != 'home') {
+                if (t > p._oreRate) {
 
-                    deltaOre = Math.floor(t / p._oreRate);
+                    if (p._id == 'home') {
 
-                    console.log(deltaOre);
+                        if (p._ore > 0) {
 
-                    if (deltaOre + p._ore > p._oreMax) {
+                            p._ore -= 1;
+                            status.money += 100;
 
-                        p._ore = p._oreMax;
+                        }
 
                     } else {
 
-                        p._ore += deltaOre;
+                        deltaOre = Math.floor(t / p._oreRate);
+
+                        if (deltaOre + p._ore > p._oreMax) {
+
+                            p._ore = p._oreMax;
+
+                        } else {
+
+                            p._ore += deltaOre;
+
+                        }
 
                     }
 
