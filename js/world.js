@@ -188,6 +188,7 @@ var World = (function () {
 
         },
 
+        // main game state update
         update : function () {
 
             var radian = Math.PI / 50 * this.ship.heading;
@@ -203,7 +204,7 @@ var World = (function () {
             this.vpy += Math.sin(radian) * this.ship.speed;
 
             // update planets in range
-			var self = this;
+            var self = this;
             this.planets.forEach(function (p) {
 
                 var d = distance(self.vpx + self.ship.x,
@@ -271,16 +272,7 @@ var World = (function () {
 
         },
 
-        // update the world
-        update : function () {
-
-            //console.log('world.js: tick');
-            //console.log(status.vpx);
-            //console.log();
-
-            status.update();
-
-        },
+        update : status.update.bind(status),
 
         updatePlanet : function (p) {
 
