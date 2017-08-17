@@ -1,3 +1,10 @@
+
+var distance = function (x1, y1, x2, y2) {
+
+    return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+
+};
+
 var Planet = function (opt) {
 
     opt = opt || {};
@@ -9,15 +16,24 @@ var Planet = function (opt) {
 
 };
 
+// what is the cost of the planets startPort
+Planet.prototype.SPCost = function () {
+
+    var d = Math.floor(distance(0,0,this.x,this.y));
+
+    return d;
+
+};
+
+Planet.prototype.build = function () {
+
+    this.startPort = true;
+
+};
+
 var World = (function () {
 
-    var distance = function (x1, y1, x2, y2) {
-
-        return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
-
-    },
-
-    status = {
+    var status = {
 
         vpw : 640, // view port width and height
         vph : 480,
