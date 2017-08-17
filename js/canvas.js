@@ -138,10 +138,22 @@ var Canvas = (function () {
 
             planetMenu : function () {
 
+                var w = World.getStatus(),
+                prop,
+                i = 0;
+
                 cls();
 
                 ctx.fillStyle = '#00ffff';
+
                 ctx.fillText('planet menu: ', 10, 10);
+
+                for (prop in w.selectedPlanet) {
+
+                    ctx.fillText(prop + ' : ' + w.selectedPlanet[prop], 10, 30 + 10 * i);
+
+                    i += 1;
+                }
 
             }
 
