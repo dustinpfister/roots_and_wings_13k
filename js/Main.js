@@ -43,7 +43,11 @@ var Main = (function () {
         // planet menu state
         planetMenu : {
 
-            tick : function () {},
+            tick : function () {
+
+                World.updatePlanet();
+
+            },
 
             keyboardDown : function (e) {
 

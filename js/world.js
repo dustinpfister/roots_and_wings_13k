@@ -192,6 +192,7 @@ var World = (function () {
 
             var radian = Math.PI / 50 * this.ship.heading;
 
+            // update position based on current ship speed.
             this.d = distance(
 
                     this.vpx + this.ship.x,
@@ -262,6 +263,22 @@ var World = (function () {
             //console.log();
 
             status.update();
+
+        },
+
+        updatePlanet : function () {
+
+            var p = status.selectedPlanet,
+            now = new Date;
+
+            // update curent selected planet
+            if (now - p._lastUpdate > p._oreRate) {
+
+                console.log(p._ore);
+
+                p._lastUpdate = new Date();
+
+            }
 
         },
 
