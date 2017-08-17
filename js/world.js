@@ -12,14 +12,14 @@ var Planet = function (opt) {
     this._x = opt._x || 0;
     this._y = opt._y || 0;
     this._size = opt._size || 60;
-    this._starPort = opt._starPort || true;
+    this._starPort = opt._starPort === undefined ? true : opt._starPort;
 
 };
 
 // what is the cost of the planets startPort
 Planet.prototype.SPCost = function () {
 
-    var d = Math.floor(distance(0,0,this.x,this.y));
+    var d = Math.floor(distance(0,0,this._x,this._y));
 
     return d;
 
@@ -89,7 +89,7 @@ var World = (function () {
                         _x : Math.cos(r) * d,
                         _y : Math.sin(r) * d,
                         _size : 30,
-                        _startPort : false
+                        _starPort : false
 
                     });
 

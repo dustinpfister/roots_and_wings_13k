@@ -67,6 +67,11 @@ var Main = (function () {
 
                         console.log('have one');
 
+                    } else {
+
+                        // check the cost
+                        console.log('cost : ' + p.SPCost());
+
                     }
 
                 }
