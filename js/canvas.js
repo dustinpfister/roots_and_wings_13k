@@ -145,12 +145,13 @@ var Canvas = (function () {
                 cls();
 
                 ctx.fillStyle = '#00ffff';
+                ctx.font = '10px courier';
 
                 ctx.fillText('planet menu: ', 10, 10);
-
+                ctx.fillText('money: ' + w.money, 10, 20);
                 for (prop in w.selectedPlanet) {
 
-                    ctx.fillText(prop + ' : ' + w.selectedPlanet[prop], 10, 30 + 10 * i);
+                    ctx.fillText(prop + ' : ' + w.selectedPlanet[prop], 10, 50 + 10 * i);
 
                     i += 1;
                 }
