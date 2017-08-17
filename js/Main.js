@@ -18,7 +18,9 @@ var Main = (function () {
                 // change to game state.
                 currentState = 'game';
 
-            }
+            },
+
+            keyboardDown : function (e) {}
 
         },
 
@@ -28,6 +30,12 @@ var Main = (function () {
 
                 World.update();
 
+            },
+
+            keyboardDown : function (e) {
+
+                World.userKeybordAction(e.keyCode);
+
             }
 
         },
@@ -35,9 +43,11 @@ var Main = (function () {
         // planet menu state
         planetMenu : {
 
-            tick : function () {}
+            tick : function () {},
 
-        },
+            keyboardDown : function (e) {}
+
+        }
 
     };
 
@@ -67,7 +77,9 @@ var Main = (function () {
     // events
     window.addEventListener('keydown', function (e) {
 
-        World.userKeybordAction(e.keyCode);
+        //World.userKeybordAction(e.keyCode);
+
+        state[currentState].keyboardDown(e);
 
     });
 
