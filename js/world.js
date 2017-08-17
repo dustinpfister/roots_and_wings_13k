@@ -16,6 +16,7 @@ var World = (function () {
         d : 0,
 
         planets : [],
+        selectedPlanet : {}, // a ref to the current selected planet
 
         //if over a planet return that planet
         onPlanet : function () {
@@ -258,6 +259,7 @@ var World = (function () {
 
                     console.log('planet menu state');
 
+                    status.selectedPlanet = p;
                     Main.changeState('planetMenu');
 
                 }

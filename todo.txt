@@ -52,9 +52,11 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 * Player starts with a small amount of starting money.
 * The player can land at friendly, or unclaimed planets.
-* Landing at a planet results in entering a planet game state
+* Landing at a planet results in entering a planet game state.
+* The l key can be used to land on a planet.
+* the l key can also be used to return to space.
 * State machine updated to support corresponding event handers for each machine state, rather than just an update method.
-* Keyboard down methods for each state
+* Keyboard down methods for each state.
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
