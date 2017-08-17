@@ -81,13 +81,29 @@ var Main = (function () {
 
                 }
 
+                // if 2
                 if (e.keyCode == 50) {
 
-                    w.ship.loadOre(p._ore, function () {
+                    if (p._id === 'home') {
 
-                        p._ore = 0;
+                        // unload ore.
+                        console.log('unloading ore at home');
 
-                    });
+                        p._ore += w.ship.ore;
+                        w.ship.ore = 0;
+
+                    } else {
+
+                        console.log('loading ore');
+
+                        //load up any ore
+                        w.ship.loadOre(p._ore, function () {
+
+                            p._ore = 0;
+
+                        });
+
+                    }
 
                 }
 
