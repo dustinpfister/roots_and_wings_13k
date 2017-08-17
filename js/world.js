@@ -39,7 +39,7 @@ var World = (function () {
         vpw : 640, // view port width and height
         vph : 480,
 
-        money : 500,
+        money : 1000,
 
         d : 0,
 
@@ -92,7 +92,7 @@ var World = (function () {
                         _x : Math.cos(r) * d,
                         _y : Math.sin(r) * d,
                         _size : 30,
-						_ore:0,
+                        _ore : 0,
                         _starPort : false
 
                     });
@@ -127,6 +127,9 @@ var World = (function () {
             x : 0, // the view port relative ship position
             y : 0,
 
+            ore : 0,
+            maxOre : 40,
+
             setHome : function () {
 
                 status.vpx = 0 - status.vpw / 2;
@@ -137,6 +140,20 @@ var World = (function () {
 
                 this.x = status.vpw / 2;
                 this.y = status.vph / 2;
+
+            },
+
+            // load ore method
+            loadOre : function (oreAmount,cb) {
+
+                // load ore amount
+                if (this.ore + oreAmount < this.maxOre) {
+
+                    this.ore += oreAmount;
+					
+					cb();
+
+                }
 
             },
 

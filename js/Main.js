@@ -81,6 +81,16 @@ var Main = (function () {
 
                 }
 
+                if (e.keyCode == 50) {
+
+                    w.ship.loadOre(p._ore, function () {
+
+                        p._ore = 0;
+
+                    });
+
+                }
+
             }
 
         }

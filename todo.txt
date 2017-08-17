@@ -63,25 +63,32 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * Build options include a just a star port for now.
 
 
+0.6.x - Trade
+
+* once a star port is built the planet will start producing resources.
+
+
 !! -- Bookmark - anything below this needs to get done -- !!
 
+* The player can load their ship with resources from a planet.
+* The player can then transport those resources back home.
 
-0.6.x - Star Ports, and upgrades
+* once a star port is built on a planet trade is possible with it.
+* once back home the player can sell those resources.
+* The amount of money the player receives depends on the type, amount, and distance from the home planet.
 
-* Three planet resources ore, air, and energy.
-* Planet properties include resource multipliers.
-* once a star port is built the planet will start producing resources.
-* The starting type, production rate, and capacity depends on the planet.
-* planet upgrades unlock after building a star port
-* upgrade a planets resource output by building one of three buildings (ore extractor, teraformer, and power cell plant).
+
+//* The starting type, production rate, and capacity depends on the planet.
+//* planet upgrades unlock after building a star port
+//* upgrade a planets resource output by building one of three buildings (ore extractor, teraformer, and power cell plant).
+
+
+// * Three planet resources ore, air, and energy.
+// * Planet properties include resource multipliers.
+
 
 0.7.x - Trade
 
-* once a star port is built on a planet trade is possible with it.
-* The player can load their ship with resources from a planet.
-* The player can then transport those resources back home.
-* once back home the player can sell those resources.
-* The amount of money the player receives depends on the type, amount, and distance from the home planet.
 
 
 0.x.x - Movement delay fix ( fix player movement so there is not a delay )
