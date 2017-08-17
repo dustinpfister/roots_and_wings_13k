@@ -202,6 +202,22 @@ var World = (function () {
             this.vpx += Math.cos(radian) * this.ship.speed;
             this.vpy += Math.sin(radian) * this.ship.speed;
 
+            // update planets in range
+			var self = this;
+            this.planets.forEach(function (p) {
+
+                var d = distance(self.vpx + self.ship.x,
+                        self.vpy + self.ship.y,
+                        p._x, p._y);
+
+                if (d < 500) {
+
+                    api.updatePlanet(p);
+
+                }
+
+            });
+
         }
 
     };
@@ -266,10 +282,11 @@ var World = (function () {
 
         },
 
-        updatePlanet : function () {
+        updatePlanet : function (p) {
 
-            var p = status.selectedPlanet,
-            now = new Date,
+            p = p === undefined ? status.selectedPlanet : p;
+
+            var now = new Date,
             t = now - p._lastUpdate,
             deltaOre;
 

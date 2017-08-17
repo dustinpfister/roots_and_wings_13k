@@ -92,7 +92,7 @@ var Canvas = (function () {
             var x = w.vpx + w.vpw + -p._x,
             y = w.vpy + w.vph + -p._y;
 
-            ctx.fillStyle = p._starPort === true ? '#00ff00' : '#afafaf';
+            ctx.fillStyle = p._starPort === true ? '#00cfcf' : '#afafaf';
 
             ctx.beginPath();
             ctx.closePath();
@@ -111,8 +111,10 @@ var Canvas = (function () {
             ctx.stroke();
 
             ctx.fillStyle = '#ffffff';
-            ctx.font = '20px courier';
+            ctx.font = '15px courier';
+
             ctx.fillText('pos: (' + Math.floor(p._x) + ',' + Math.floor(p._y) + ')', x, y);
+            ctx.fillText('ore: ' + p._ore, x, y+15);
 
         });
 
