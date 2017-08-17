@@ -220,9 +220,22 @@ var World = (function () {
 
             case 'sp':
 
-                console.log('buying star port');
+                var cost = p.SPCost();
 
-                console.log(p.SPCost());
+                if (status.money >= cost) {
+
+                    status.money -= cost;
+                    p._starPort = true;
+
+                    console.log('bought star port');
+
+                } else {
+
+                    console.log('need more money.');
+
+                }
+
+                console.log();
 
                 break;
 
