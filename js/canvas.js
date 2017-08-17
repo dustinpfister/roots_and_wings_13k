@@ -114,7 +114,7 @@ var Canvas = (function () {
             ctx.font = '15px courier';
 
             ctx.fillText('pos: (' + Math.floor(p._x) + ',' + Math.floor(p._y) + ')', x, y);
-            ctx.fillText('ore: ' + p._ore, x, y+15);
+            ctx.fillText('ore: ' + p._ore, x, y + 15);
 
         });
 
@@ -134,6 +134,7 @@ var Canvas = (function () {
         ctx.fillText('money: ' + w.money, 10, 30);
         //ctx.fillText('vp pos : (' + Math.floor(w.vpx) + ',' + Math.floor(w.vpy) + ')', 10, 40);
         ctx.fillText('ship pos : (' + Math.floor(w.vpx + w.ship.x) + ',' + Math.floor(w.vpy + w.ship.y) + ')', 10, 40);
+        ctx.fillText('ship ore: ' + w.ship.ore + '/' + w.ship.maxOre,10,50);
 
     },
 

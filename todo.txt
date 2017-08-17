@@ -66,11 +66,11 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 0.6.x - Trade
 
 * once a star port is built the planet will start producing resources.
+* The player can load their ship with resources from a planet.
 
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
-* The player can load their ship with resources from a planet.
 * The player can then transport those resources back home.
 
 * once a star port is built on a planet trade is possible with it.
