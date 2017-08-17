@@ -16,7 +16,7 @@ var Planet = function (opt) {
 
     this._ore = 0;
     this._oreMax = 10; // max ore
-    this._oreRate = 10000; // 1 ore every ten seconds
+    this._oreRate = 3000; // 1 ore every ten seconds
 
     this._lastUpdate = new Date();
 
@@ -269,14 +269,20 @@ var World = (function () {
         updatePlanet : function () {
 
             var p = status.selectedPlanet,
-            now = new Date;
 
-            // update curent selected planet
-            if (now - p._lastUpdate > p._oreRate) {
+            now = new Date,
+            t = now - p._lastUpdate;
 
-                console.log(p._ore);
+            if (p._starPort) {
 
-                p._lastUpdate = new Date();
+                // update curent selected planet
+                if (t > p._oreRate) {
+
+                    console.log(Math.floor(t / p._oreRate));
+
+                    p._lastUpdate = new Date();
+
+                }
 
             }
 
