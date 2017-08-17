@@ -45,7 +45,19 @@ var Main = (function () {
 
             tick : function () {},
 
-            keyboardDown : function (e) {}
+            keyboardDown : function (e) {
+
+                console.log(e.keyCode);
+
+                // if l key
+                if (e.keyCode == 76) {
+
+                    // return to game
+                    currentState = 'game';
+
+                }
+
+            }
 
         }
 

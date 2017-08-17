@@ -50,9 +50,11 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 0.5.x - Planet state
 
-* player starts with a small amount of starting money.
+* Player starts with a small amount of starting money.
 * The player can land at friendly, or unclaimed planets.
-* landing at a planet results in entering a planet game state
+* Landing at a planet results in entering a planet game state
+* State machine updated to support corresponding event handers for each machine state, rather than just an update method.
+* Keyboard down methods for each state
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
