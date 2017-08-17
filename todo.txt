@@ -58,10 +58,10 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * the l key can also be used to return to space.
 * State machine updated to support corresponding event handers for each machine state, rather than just an update method.
 * Keyboard down methods for each state.
+* The planet game state displays a planet menu.
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
-* The planet game state displays a planet menu.
 * If the planet is unclaimed the player can clam the planet as theirs by building something in the planet menu.
 * Build options include a just a star port for now.
 

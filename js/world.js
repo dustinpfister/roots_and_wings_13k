@@ -19,15 +19,9 @@ var Planet = function (opt) {
 // what is the cost of the planets startPort
 Planet.prototype.SPCost = function () {
 
-    var d = Math.floor(distance(0,0,this._x,this._y));
+    var d = Math.floor(distance(0, 0, this._x, this._y));
 
     return d;
-
-};
-
-Planet.prototype.build = function () {
-
-    this.startPort = true;
 
 };
 
@@ -38,7 +32,7 @@ var World = (function () {
         vpw : 640, // view port width and height
         vph : 480,
 
-        money : 1000,
+        money : 10000,
 
         d : 0,
 
@@ -215,6 +209,24 @@ var World = (function () {
 
             // default heading
             status.ship.setHome();
+
+        },
+
+        buy : function (what) {
+
+            var p = status.selectedPlanet;
+
+            switch (what) {
+
+            case 'sp':
+
+                console.log('buying star port');
+
+                console.log(p.SPCost());
+
+                break;
+
+            }
 
         },
 

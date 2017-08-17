@@ -70,7 +70,8 @@ var Main = (function () {
                     } else {
 
                         // check the cost
-                        console.log('cost : ' + p.SPCost());
+                        //console.log('cost : ' + p.SPCost());
+                        World.buy('sp');
 
                     }
 
