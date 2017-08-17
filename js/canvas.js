@@ -151,8 +151,10 @@ var Canvas = (function () {
                 ctx.fillText('money: ' + w.money, 10, 20);
                 for (prop in w.selectedPlanet) {
 
-                    ctx.fillText(prop + ' : ' + w.selectedPlanet[prop], 10, 50 + 10 * i);
+                    if (prop[0] === '_') {
+                        ctx.fillText(prop + ' : ' + w.selectedPlanet[prop], 10, 50 + 10 * i);
 
+                    }
                     i += 1;
                 }
 
