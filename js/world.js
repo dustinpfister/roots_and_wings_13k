@@ -269,16 +269,28 @@ var World = (function () {
         updatePlanet : function () {
 
             var p = status.selectedPlanet,
-
             now = new Date,
-            t = now - p._lastUpdate;
+            t = now - p._lastUpdate,
+            deltaOre;
 
             if (p._starPort) {
 
                 // update curent selected planet
                 if (t > p._oreRate) {
 
-                    console.log(Math.floor(t / p._oreRate));
+                    deltaOre = Math.floor(t / p._oreRate);
+
+                    console.log(deltaOre);
+
+                    if (deltaOre + p._ore > p._oreMax) {
+
+                        p._ore = p._oreMax;
+
+                    } else {
+
+                        p._ore += deltaOre;
+
+                    }
 
                     p._lastUpdate = new Date();
 
