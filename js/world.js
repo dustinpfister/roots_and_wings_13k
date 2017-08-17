@@ -1,7 +1,7 @@
 
 var distance = function (x1, y1, x2, y2) {
 
-    return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+    return Math.sqrt(Math.abs(Math.pow(x1 - x2, 2)) + Math.abs(Math.pow(y1 - y2, 2)));
 
 };
 
@@ -43,7 +43,8 @@ var World = (function () {
         onPlanet : function () {
 
             var i = this.planets.length,
-            p;
+            p,
+            d;
             while (i--) {
 
                 p = this.planets[i];
@@ -173,7 +174,7 @@ var World = (function () {
 
                 if (this.speed <= 0) {
 
-                    this.speed = 1;
+                    this.speed = 0;
 
                 }
 
@@ -234,6 +235,8 @@ var World = (function () {
                     console.log('need more money.');
 
                 }
+
+                console.log(p);
 
                 console.log();
 

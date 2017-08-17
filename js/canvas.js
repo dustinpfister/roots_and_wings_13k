@@ -83,22 +83,36 @@ var Canvas = (function () {
     // just a simple draw all planets method (very slow)
     drawPlanets = function () {
 
-        var s = World.getStatus(),
-        pl = s.planets;
+        var w = World.getStatus(),
+        pl = w.planets;
 
-        ctx.strokeStyle = '#ffffff';
+        ctx.strokeStyle = '#000000';
         pl.forEach(function (p) {
+
+            var x = w.vpx + w.vpw + -p._x,
+            y = w.vpy + w.vph + -p._y;
 
             ctx.fillStyle = p._starPort === true ? '#00ff00' : '#afafaf';
 
             ctx.beginPath();
             ctx.closePath();
             ctx.arc(
-                s.vpx + s.vpw + p._x,
-                s.vpy + s.vph + p._y,
+                x,
+                y,
                 p._size, 0, Math.PI * 2);
+
+            /*
+            ctx.arc(
+            w.vpx + w.vpw + p._x,
+            w.vpy + w.vph + p._y,
+            p._size, 0, Math.PI * 2);
+             */
             ctx.fill();
             ctx.stroke();
+
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '20px courier';
+            ctx.fillText('pos: (' + Math.floor(p._x) + ',' + Math.floor(p._y) + ')', x, y);
 
         });
 
@@ -116,6 +130,8 @@ var Canvas = (function () {
         ctx.fillText('distance: ' + w.d, 10, 10);
         ctx.fillText('speed: ' + w.ship.speed, 10, 20);
         ctx.fillText('money: ' + w.money, 10, 30);
+        //ctx.fillText('vp pos : (' + Math.floor(w.vpx) + ',' + Math.floor(w.vpy) + ')', 10, 40);
+        ctx.fillText('ship pos : (' + Math.floor(w.vpx + w.ship.x) + ',' + Math.floor(w.vpy + w.ship.y) + ')', 10, 40);
 
     },
 
