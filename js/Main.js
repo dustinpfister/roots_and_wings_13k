@@ -47,6 +47,9 @@ var Main = (function () {
 
             keyboardDown : function (e) {
 
+                var w = World.getStatus(),
+                p = w.selectedPlanet;
+
                 console.log(e.keyCode);
 
                 // if l key
@@ -60,7 +63,11 @@ var Main = (function () {
                 // if 1 key
                 if (e.keyCode == 49) {
 
-                    console.log('buy startport');
+                    if (p._starPort) {
+
+                        console.log('have one');
+
+                    }
 
                 }
 
