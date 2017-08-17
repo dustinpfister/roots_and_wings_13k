@@ -67,27 +67,16 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 * once a star port is built the planet will start producing resources.
 * The player can load their ship with resources from a planet.
-
+* just ore is produced for now.
+* The player can then transport those resources back home.
+* home process 1 ore every few seconds, and makes a little money each time
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
-* The player can then transport those resources back home.
+0.7.x - distance bonus
 
-* once a star port is built on a planet trade is possible with it.
-* once back home the player can sell those resources.
-* The amount of money the player receives depends on the type, amount, and distance from the home planet.
-
-
-//* The starting type, production rate, and capacity depends on the planet.
-//* planet upgrades unlock after building a star port
-//* upgrade a planets resource output by building one of three buildings (ore extractor, teraformer, and power cell plant).
-
-
-// * Three planet resources ore, air, and energy.
-// * Planet properties include resource multipliers.
-
-
-0.7.x - Trade
+* distance bonus when dropping off ore.
+* home planet is updated on each frame tick
 
 
 
@@ -108,6 +97,15 @@ The wings aspect of the game has to do with going beyond the inner space of plan
 
 
 !! if I have time, and space !!
+
+x.x.x - Resource Update
+* The amount of money the player receives depends on the type, amount, and distance from the home planet.
+* The starting type, production rate, and capacity depends on the planet.
+* planet upgrades unlock after building a star port
+* upgrade a planets resource output by building one of three buildings (ore extractor, teraformer, and power cell plant).
+ * Three planet resources ore, air, and energy.
+ * Planet properties include resource multipliers.
+
 
 x.x.x - Space Sectors
 
