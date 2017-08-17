@@ -47,14 +47,15 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * Inner, and outer rim of planets around (0,0).
 
 
-!! -- Bookmark - anything below this needs to get done -- !!
 
 0.5.x - Planet state
 
-* money property added to ship object.
 * player starts with a small amount of starting money.
 * The player can land at friendly, or unclaimed planets.
 * landing at a planet results in entering a planet game state
+
+!! -- Bookmark - anything below this needs to get done -- !!
+
 * The planet game state displays a planet menu.
 * If the planet is unclaimed the player can clam the planet as theirs by building something in the planet menu.
 * Build options include a just a star port for now.

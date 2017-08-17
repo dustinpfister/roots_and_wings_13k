@@ -7,27 +7,39 @@ var Main = (function () {
     state = {
 
         // the start state is called once
-        start : function () {
+        start : {
 
-            console.log('start state');
+            tick : function () {
 
-            World.newGame();
+                console.log('start state');
 
-            // change to game state.
-            currentState = 'game';
+                World.newGame();
+
+                // change to game state.
+                currentState = 'game';
+
+            }
 
         },
 
-        game : function () {
+        game : {
 
-            World.update();
+            tick : function () {
+
+                World.update();
+
+            }
 
         },
 
         // planet menu state
-        planetMenu : function () {}
+        planetMenu : {
 
-    },
+            tick : function () {}
+
+        },
+
+    };
 
     // main app loop
     loop = function () {
@@ -40,7 +52,7 @@ var Main = (function () {
         if (now - lastTick >= frameRate) {
 
             // call the current state method
-            state[currentState]();
+            state[currentState].tick();
             Canvas.draw[currentState]();
 
             lastTick = new Date();
