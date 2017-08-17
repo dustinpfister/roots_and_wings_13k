@@ -86,9 +86,10 @@ var Canvas = (function () {
         var s = World.getStatus(),
         pl = s.planets;
 
-        ctx.fillStyle = '#00ffff';
         ctx.strokeStyle = '#ffffff';
         pl.forEach(function (p) {
+
+            ctx.fillStyle = p._starPort === true ? '#00ff00' : '#afafaf';
 
             ctx.beginPath();
             ctx.closePath();
