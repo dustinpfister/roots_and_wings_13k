@@ -61,7 +61,9 @@ var World = (function () {
 
                     x : Math.cos(r) * d,
                     y : Math.sin(r) * d,
-                    size : 30
+                    size : 30,
+
+                    startPort : false
 
                 };
 
@@ -83,7 +85,9 @@ var World = (function () {
 
                 x : 0,
                 y : 0,
-                size : 50
+                size : 50,
+
+                startPort : true
 
             });
 

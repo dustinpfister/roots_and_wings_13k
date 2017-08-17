@@ -57,6 +57,13 @@ var Main = (function () {
 
                 }
 
+                // if 1 key
+                if (e.keyCode == 49) {
+
+                    console.log('buy startport');
+
+                }
+
             }
 
         }
