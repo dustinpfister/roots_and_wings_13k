@@ -1,3 +1,14 @@
+var Planet = function (opt) {
+
+    opt = opt || {};
+
+    this.x = opt.x || 0;
+    this.y = opt.y || 0;
+    this.size = opt.size || 60;
+    this.starPort = opt.starPort || true;
+
+};
+
 var World = (function () {
 
     var distance = function (x1, y1, x2, y2) {
@@ -57,15 +68,14 @@ var World = (function () {
 
                 r = Math.PI / (pc / 2) * p;
 
-                pl = {
+                pl = new Planet({
 
-                    x : Math.cos(r) * d,
-                    y : Math.sin(r) * d,
-                    size : 30,
+                        x : Math.cos(r) * d,
+                        y : Math.sin(r) * d,
+                        size : 30,
+                        startPort : false
 
-                    startPort : false
-
-                };
+                    });
 
                 this.planets.push(pl);
 
@@ -81,15 +91,7 @@ var World = (function () {
             this.planets = [];
 
             // and home world
-            this.planets.push({
-
-                x : 0,
-                y : 0,
-                size : 50,
-
-                startPort : true
-
-            });
+            this.planets.push(new Planet());
 
             this.genRim(30, 1000);
             this.genRim(120, 10000);
