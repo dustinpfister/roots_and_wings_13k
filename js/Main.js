@@ -11,8 +11,6 @@ var Main = (function () {
 
             tick : function () {
 
-                console.log('start state');
-
                 World.newGame();
 
                 // change to game state.
@@ -34,18 +32,13 @@ var Main = (function () {
 
             keyboardDown : function (e) {
 
-			    var w = World.getStatus();
-			
-                //World.userKeybordAction(e.keyCode);
+                var w = World.getStatus();
 
                 switch (e.keyCode) {
 
                 case 68: // d
 
-
                     w.ship.headingChange()
-
-                    //status.vpx += 5;
 
                     break;
 
@@ -54,22 +47,15 @@ var Main = (function () {
 
                     w.ship.headingChange(true);
 
-                    //status.vpx -= 5;
-
                     break;
 
                 case 87: // w
-
-                    //status.vpy -= 5;
-
 
                     w.ship.speedChange();
 
                     break;
 
                 case 83: // s
-
-                    //status.vpy += 5;
 
                     w.ship.speedChange(true);
 
@@ -80,8 +66,6 @@ var Main = (function () {
                     var p = w.onPlanet();
 
                     if (p) {
-
-                        console.log('planet menu state');
 
                         w.selectedPlanet = p;
                         currentState = 'planetMenu';
@@ -110,8 +94,6 @@ var Main = (function () {
                 var w = World.getStatus(),
                 p = w.selectedPlanet;
 
-                console.log(e.keyCode);
-
                 // if l key
                 if (e.keyCode == 76) {
 
@@ -123,14 +105,9 @@ var Main = (function () {
                 // if 1 key
                 if (e.keyCode == 49) {
 
-                    if (p._starPort) {
-
-                        console.log('have one');
-
-                    } else {
+                    if (!p._starPort) {
 
                         // check the cost
-                        //console.log('cost : ' + p.SPCost());
                         World.buy('sp');
 
                     }
@@ -143,14 +120,10 @@ var Main = (function () {
                     if (p._id === 'home') {
 
                         // unload ore.
-                        console.log('unloading ore at home');
-
                         p._ore += w.ship.ore;
                         w.ship.ore = 0;
 
                     } else {
-
-                        console.log('loading ore');
 
                         //load up any ore
                         w.ship.loadOre(p._ore, function () {

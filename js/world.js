@@ -248,8 +248,6 @@ var World = (function () {
         // create a new World
         newGame : function () {
 
-            console.log('world.js: new world');
-
             status.genPlanets();
 
             // default heading
@@ -274,18 +272,7 @@ var World = (function () {
                     p._lastUpdate = new Date();
                     p._starPort = true;
 
-                    console.log('bought star port');
-
-                } else {
-
-                    console.log('need more money.');
-
                 }
-
-                console.log(p);
-
-                console.log();
-
                 break;
 
             }
@@ -339,69 +326,6 @@ var World = (function () {
             }
 
         },
-
-		/*
-        // user action method
-        userKeybordAction : function (keyCode) {
-
-            console.log(keyCode);
-
-            switch (keyCode) {
-
-            case 68: // d
-
-
-                status.ship.headingChange()
-
-                //status.vpx += 5;
-
-                break;
-
-            case 65: // a
-
-
-                status.ship.headingChange(true);
-
-                //status.vpx -= 5;
-
-                break;
-
-            case 87: // w
-
-                //status.vpy -= 5;
-
-
-                status.ship.speedChange();
-
-                break;
-
-            case 83: // s
-
-                //status.vpy += 5;
-
-                status.ship.speedChange(true);
-
-                break;
-
-            case 76: // l
-
-                var p = status.onPlanet();
-
-                if (p) {
-
-                    console.log('planet menu state');
-
-                    status.selectedPlanet = p;
-                    Main.changeState('planetMenu');
-
-                }
-
-                break;
-
-            }
-
-        },
-		*/
 
         // return a reference to the status object
         getStatus : function () {
