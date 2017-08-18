@@ -77,7 +77,7 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 * Distance bonus when dropping off ore.
 * Home planet is updated on each frame tick.
-
+* js min files are looking good (around 6k)
 
 
 0.x.x - Movement delay fix ( fix player movement so there is not a delay )
