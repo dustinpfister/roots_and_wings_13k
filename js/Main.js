@@ -3,6 +3,7 @@ var Main = (function () {
     var currentState = 'start',
     frameRate = 1000 / 30, // 30 fps
     lastTick = new Date(0),
+    keyList = [],
 
     state = {
 
@@ -26,43 +27,33 @@ var Main = (function () {
 
             tick : function () {
 
-                World.update();
-
-            },
-
-            keyboardDown : function (e) {
-
                 var w = World.getStatus();
 
-                switch (e.keyCode) {
+                World.update();
 
-                case 68: // d
+                if (keyList[68]) {
 
-                    w.ship.headingChange()
+                    w.ship.headingChange();
 
-                    break;
+                }
 
-                case 65: // a
-
+                if (keyList[65]) {
 
                     w.ship.headingChange(true);
 
-                    break;
+                }
 
-                case 87: // w
-
+                if (keyList[87]) {
                     w.ship.speedChange();
 
-                    break;
+                }
 
-                case 83: // s
-
+                if (keyList[83]) {
                     w.ship.speedChange(true);
 
-                    break;
+                }
 
-                case 76: // l
-
+                if (keyList[76]) {
                     var p = w.onPlanet();
 
                     if (p) {
@@ -72,11 +63,11 @@ var Main = (function () {
 
                     }
 
-                    break;
-
                 }
 
-            }
+            },
+
+            keyboardDown : function (e) {}
 
         },
 
@@ -168,9 +159,17 @@ var Main = (function () {
     // events
     window.addEventListener('keydown', function (e) {
 
+        keyList[e.keyCode] = true;
+
         //World.userKeybordAction(e.keyCode);
 
         state[currentState].keyboardDown(e);
+
+    });
+
+    window.addEventListener('keyup', function (e) {
+
+        keyList[e.keyCode] = false;
 
     });
 
