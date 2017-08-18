@@ -1,0 +1,27 @@
+{
+  "name": "game_roots_and_wings",
+  "version": "0.7.3",
+  "description": "Stay close to home and gather resouces, or go out and get lost.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinpfister/roots_and_wings_13k.git"
+  },
+  "keywords": [
+    "game",
+    "roots",
+    "wings"
+  ],
+  "author": "Dustin Pfister",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dustinpfister/roots_and_wings_13k/issues"
+  },
+  "homepage": "https://github.com/dustinpfister/roots_and_wings_13k#readme",
+  "devDependencies": {
+    "jsmin": "^1.0.1"
+  }
+}
