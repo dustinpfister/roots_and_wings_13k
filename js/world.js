@@ -340,6 +340,7 @@ var World = (function () {
 
         },
 
+		/*
         // user action method
         userKeybordAction : function (keyCode) {
 
@@ -400,6 +401,7 @@ var World = (function () {
             }
 
         },
+		*/
 
         // return a reference to the status object
         getStatus : function () {

@@ -73,10 +73,10 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
-0.7.x - distance bonus
+0.7.x - Distance bonus
 
-* distance bonus when dropping off ore.
-* home planet is updated on each frame tick
+* Distance bonus when dropping off ore.
+* Home planet is updated on each frame tick.
 
 
 

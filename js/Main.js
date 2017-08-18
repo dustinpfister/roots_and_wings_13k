@@ -34,7 +34,63 @@ var Main = (function () {
 
             keyboardDown : function (e) {
 
-                World.userKeybordAction(e.keyCode);
+			    var w = World.getStatus();
+			
+                //World.userKeybordAction(e.keyCode);
+
+                switch (e.keyCode) {
+
+                case 68: // d
+
+
+                    w.ship.headingChange()
+
+                    //status.vpx += 5;
+
+                    break;
+
+                case 65: // a
+
+
+                    w.ship.headingChange(true);
+
+                    //status.vpx -= 5;
+
+                    break;
+
+                case 87: // w
+
+                    //status.vpy -= 5;
+
+
+                    w.ship.speedChange();
+
+                    break;
+
+                case 83: // s
+
+                    //status.vpy += 5;
+
+                    w.ship.speedChange(true);
+
+                    break;
+
+                case 76: // l
+
+                    var p = w.onPlanet();
+
+                    if (p) {
+
+                        console.log('planet menu state');
+
+                        w.selectedPlanet = p;
+                        currentState = 'planetMenu';
+
+                    }
+
+                    break;
+
+                }
 
             }
 
