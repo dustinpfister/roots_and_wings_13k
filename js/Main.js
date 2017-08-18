@@ -4,6 +4,7 @@ var Main = (function () {
     frameRate = 1000 / 30, // 30 fps
     lastTick = new Date(0),
     keyList = [],
+    keyLockTime = 0,
 
     state = {
 
@@ -31,35 +32,40 @@ var Main = (function () {
 
                 World.update();
 
-                if (keyList[68]) {
+                if (keyLockTime <= 0) {
 
-                    w.ship.headingChange();
+                    if (keyList[68]) {
 
-                }
+                        w.ship.headingChange();
 
-                if (keyList[65]) {
+                    }
 
-                    w.ship.headingChange(true);
+                    if (keyList[65]) {
 
-                }
+                        w.ship.headingChange(true);
 
-                if (keyList[87]) {
-                    w.ship.speedChange();
+                    }
 
-                }
+                    if (keyList[87]) {
+                        w.ship.speedChange();
 
-                if (keyList[83]) {
-                    w.ship.speedChange(true);
+                    }
 
-                }
+                    if (keyList[83]) {
+                        w.ship.speedChange(true);
 
-                if (keyList[76]) {
-                    var p = w.onPlanet();
+                    }
 
-                    if (p) {
+                    if (keyList[76]) {
+                        var p = w.onPlanet();
 
-                        w.selectedPlanet = p;
-                        currentState = 'planetMenu';
+                        if (p) {
+
+                            w.selectedPlanet = p;
+							keyLockTime = 1000;
+                            currentState = 'planetMenu';
+
+                        }
 
                     }
 
@@ -85,10 +91,15 @@ var Main = (function () {
                 var w = World.getStatus(),
                 p = w.selectedPlanet;
 
+                console.log('hello');
+
                 // if l key
                 if (e.keyCode == 76) {
 
+                    console.log(e.keyCode);
+
                     // return to game
+					keyLockTime = 1000;
                     currentState = 'game';
 
                 }
@@ -142,6 +153,12 @@ var Main = (function () {
         requestAnimationFrame(loop);
 
         if (now - lastTick >= frameRate) {
+
+            if (keyLockTime > 0) {
+
+                keyLockTime -= now - lastTick;
+
+            }
 
             // call the current state method
             state[currentState].tick();
