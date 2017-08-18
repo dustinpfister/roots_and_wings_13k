@@ -62,7 +62,7 @@ var Main = (function () {
                         if (p) {
 
                             w.selectedPlanet = p;
-							keyLockTime = 1000;
+                            keyLockTime = 1000;
                             currentState = 'planetMenu';
 
                         }
@@ -91,15 +91,13 @@ var Main = (function () {
                 var w = World.getStatus(),
                 p = w.selectedPlanet;
 
-                console.log('hello');
-
                 // if l key
                 if (e.keyCode == 76) {
 
                     console.log(e.keyCode);
 
                     // return to game
-					keyLockTime = 1000;
+                    keyLockTime = 1000;
                     currentState = 'game';
 
                 }

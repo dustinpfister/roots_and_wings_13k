@@ -71,17 +71,19 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 * The player can then transport those resources back home.
 * home process 1 ore every few seconds, and makes a little money each time
 
-!! -- Bookmark - anything below this needs to get done -- !!
 
 0.7.x - Distance bonus
 
-* Distance bonus when dropping off ore.
-* Home planet is updated on each frame tick.
+!! -- Bookmark - anything below this needs to get done -- !!
+
+* made a build script that combines all dev files into a minified build file.
+* movement delay fixed
+* multi key input support.
 * js min files are looking good (around 6k)
 
 
-0.x.x - Movement delay fix ( fix player movement so there is not a delay )
-0.x.x - Multi key input fix ( fix problem with multi key input)
+* Distance bonus when dropping off ore.
+* Home planet is updated on each frame tick.
 
 
 !! 1.x - Wings game aspect !!

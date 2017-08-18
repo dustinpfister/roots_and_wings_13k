@@ -144,14 +144,14 @@ var World = (function () {
             },
 
             // load ore method
-            loadOre : function (oreAmount,cb) {
+            loadOre : function (oreAmount, cb) {
 
                 // load ore amount
                 if (this.ore + oreAmount < this.maxOre) {
 
                     this.ore += oreAmount;
-					
-					cb();
+
+                    cb();
 
                 }
 
@@ -238,6 +238,9 @@ var World = (function () {
                 }
 
             });
+
+            // always update home
+            api.updatePlanet(this.planets[0]);
 
         }
 
