@@ -8,6 +8,7 @@ var Planet = function (opt) {
     this._id = opt._id || 'home';
     this._x = opt._x || 0;
     this._y = opt._y || 0;
+    this.d = _.dist(0, 0, this._x, this._y);
     this._size = opt._size || 60;
     this._starPort = opt._starPort === undefined ? true : opt._starPort;
 
@@ -150,6 +151,14 @@ var World = (function () {
                 if (this.ore + pl._ore <= this.maxOre) {
 
                     this.ore += pl._ore;
+
+                    // hold an object
+                    this.hold.push({
+
+                        pl : pl,
+                        amount : pl._ore
+
+                    });
 
                     cb();
 
