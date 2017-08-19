@@ -124,6 +124,10 @@ var World = (function () {
             y : 0,
 
             ore : 0,
+
+            // cargo hold
+            hold : [],
+
             maxOre : 40,
 
             setHome : function () {
@@ -140,12 +144,12 @@ var World = (function () {
             },
 
             // load ore method
-            loadOre : function (oreAmount, cb) {
+            loadOre : function (pl, cb) {
 
                 // load ore amount
-                if (this.ore + oreAmount <= this.maxOre) {
+                if (this.ore + pl._ore <= this.maxOre) {
 
-                    this.ore += oreAmount;
+                    this.ore += pl._ore;
 
                     cb();
 

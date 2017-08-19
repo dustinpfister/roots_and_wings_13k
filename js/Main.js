@@ -125,7 +125,7 @@ var Main = (function () {
                     } else {
 
                         //load up any ore
-                        w.ship.loadOre(p._ore, function () {
+                        w.ship.loadOre(p, function () {
 
                             p._ore = 0;
 
