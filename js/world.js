@@ -172,6 +172,16 @@ var World = (function () {
                 status.planets[0]._ore += this.ore;
                 this.ore = 0;
 
+                console.log('bonus:');
+
+                this.hold.forEach(function (h) {
+
+                    console.log('from planet: ' + h.pl._id);
+                    console.log('bonus: ' + (Math.floor(h.pl.d * .05)));
+
+                });
+                this.hold = [];
+
             },
 
             // ship heading change
