@@ -120,10 +120,7 @@ var Main = (function () {
                     if (p._id === 'home') {
 
                         // unload ore.
-                        p._ore += w.ship.ore;
-                        w.ship.ore = 0;
-						
-						
+                        w.ship.unloadOre();
 
                     } else {
 

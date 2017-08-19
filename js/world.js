@@ -153,6 +153,14 @@ var World = (function () {
 
             },
 
+            // unloadOre
+            unloadOre : function () {
+
+                status.planets[0]._ore += this.ore;
+                this.ore = 0;
+
+            },
+
             // ship heading change
             headingChange : function (down) {
 

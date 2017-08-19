@@ -2,7 +2,7 @@ var jsmin = require('jsmin').jsmin,
 fs = require('fs');
 
 var files = [
-
+    'api',
     'world',
     'canvas',
     'main'
