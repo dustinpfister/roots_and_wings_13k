@@ -74,17 +74,16 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 0.7.x - Distance bonus
 
-
 * made a build script that combines all dev files into a minified build file.
 * movement delay fixed
 * multi key input support.
-* js min files are looking good (around 6k)
 * Home planet is updated on each frame tick.
-* ship.unloadOre method added
+* ship.unloadOre method added.
+* Distance bonus when dropping off ore.
+* Did away with home ore processing for now.
+* At 6.61KB
 
 !! -- Bookmark - anything below this needs to get done -- !!
-
-* Distance bonus when dropping off ore.
 
 0.8.x - Over planet menu
 
