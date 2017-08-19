@@ -124,12 +124,14 @@ var World = (function () {
             x : 0, // the view port relative ship position
             y : 0,
 
-            ore : 0,
+            //ore : 0,
 
             // cargo hold
             hold : [],
+            cargoCT : 0,
+            cargoMax : 40,
 
-            maxOre : 40,
+            //maxOre : 40,
 
             setHome : function () {
 
@@ -144,13 +146,30 @@ var World = (function () {
 
             },
 
+            findCargoCT : function () {
+
+                var sl = this;
+
+                sl.cargoCT = 0;
+
+                sl.hold.forEach(function (h) {
+
+                    sl.cargoCT += h.amount;
+
+                });
+
+            },
+
             // load ore method
             loadOre : function (pl, cb) {
 
-                // load ore amount
-                if (this.ore + pl._ore <= this.maxOre) {
+                this.findCargoCT();
 
-                    this.ore += pl._ore;
+                // load ore amount
+                if (this.cargoCT + pl._ore <= this.cargoMax) {
+                    //if (this.ore + pl._ore <= this.maxOre) {
+
+                    //this.ore += pl._ore;
 
                     // hold an object
                     this.hold.push({
@@ -159,6 +178,8 @@ var World = (function () {
                         amount : pl._ore
 
                     });
+
+                    this.findCargoCT();
 
                     cb();
 
@@ -169,19 +190,23 @@ var World = (function () {
             // unloadOre
             unloadOre : function () {
 
-                status.planets[0]._ore += this.ore;
-                this.ore = 0;
+                //status.planets[0]._ore += this.ore;
+                //this.ore = 0;
 
                 console.log('bonus:');
 
                 this.hold.forEach(function (h) {
 
                     console.log('from planet: ' + h.pl._id);
-                    console.log('bonus: ' + (Math.floor(h.pl.d * .05)));
+
+                    var m = h.amount + Math.floor(h.pl.d / 100 * .5 * h.amount);
+                    console.log('money: ' + m);
+                    status.money += m;
 
                 });
                 this.hold = [];
 
+                this.findCargoCT();
             },
 
             // ship heading change
@@ -267,7 +292,7 @@ var World = (function () {
             });
 
             // always update home
-            api.updatePlanet(this.planets[0]);
+            //api.updatePlanet(this.planets[0]);
 
         }
 
@@ -326,13 +351,14 @@ var World = (function () {
 
                     if (p._id == 'home') {
 
+                        /*
                         if (p._ore > 0) {
 
-                            p._ore -= 1;
-                            status.money += 100;
+                        p._ore -= 1;
+                        status.money += 100;
 
                         }
-
+                         */
                     } else {
 
                         deltaOre = Math.floor(t / p._oreRate);
