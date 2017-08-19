@@ -122,6 +122,8 @@ var Main = (function () {
                         // unload ore.
                         p._ore += w.ship.ore;
                         w.ship.ore = 0;
+						
+						
 
                     } else {
 

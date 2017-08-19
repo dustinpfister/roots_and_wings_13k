@@ -1,9 +1,5 @@
 
-var distance = function (x1, y1, x2, y2) {
 
-    return Math.sqrt(Math.abs(Math.pow(x1 - x2, 2)) + Math.abs(Math.pow(y1 - y2, 2)));
-
-};
 
 var Planet = function (opt) {
 
@@ -26,7 +22,7 @@ var Planet = function (opt) {
 // what is the cost of the planets startPort
 Planet.prototype.SPCost = function () {
 
-    var d = Math.floor(distance(0, 0, this._x, this._y));
+    var d = Math.floor(_.dist(0, 0, this._x, this._y));
 
     return d;
 
@@ -56,7 +52,7 @@ var World = (function () {
 
                 p = this.planets[i];
 
-                if (distance(
+                if (_.dist(
 
                         this.vpx + this.ship.x,
                         this.vpy + this.ship.y,
@@ -214,7 +210,7 @@ var World = (function () {
             var radian = Math.PI / 50 * this.ship.heading;
 
             // update position based on current ship speed.
-            this.d = distance(
+            this.d = _.dist(
 
                     this.vpx + this.ship.x,
                     this.vpy + this.ship.y,
@@ -227,7 +223,7 @@ var World = (function () {
             var self = this;
             this.planets.forEach(function (p) {
 
-                var d = distance(self.vpx + self.ship.x,
+                var d = _.dist(self.vpx + self.ship.x,
                         self.vpy + self.ship.y,
                         p._x, p._y);
 
