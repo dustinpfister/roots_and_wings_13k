@@ -74,16 +74,23 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 0.7.x - Distance bonus
 
-!! -- Bookmark - anything below this needs to get done -- !!
 
 * made a build script that combines all dev files into a minified build file.
 * movement delay fixed
 * multi key input support.
 * js min files are looking good (around 6k)
+* Home planet is updated on each frame tick.
+
+!! -- Bookmark - anything below this needs to get done -- !!
 
 
 * Distance bonus when dropping off ore.
-* Home planet is updated on each frame tick.
+
+0.8.x - Over planet menu
+
+* create an over planet menu that appears when over a planet
+* press q for quick load / unload or ore
+* press s to buy star port if the player has enough money to buy the planet.
 
 
 !! 1.x - Wings game aspect !!

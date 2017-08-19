@@ -39,7 +39,7 @@ var World = (function () {
         vpw : 640, // view port width and height
         vph : 480,
 
-        money : 1000,
+        money : 15000,
 
         d : 0,
 
@@ -147,7 +147,7 @@ var World = (function () {
             loadOre : function (oreAmount, cb) {
 
                 // load ore amount
-                if (this.ore + oreAmount < this.maxOre) {
+                if (this.ore + oreAmount <= this.maxOre) {
 
                     this.ore += oreAmount;
 
@@ -294,7 +294,7 @@ var World = (function () {
 
             if (p._starPort) {
 
-                // update curent selected planet
+                // update current selected planet
                 if (t > p._oreRate) {
 
                     if (p._id == 'home') {
