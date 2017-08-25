@@ -85,21 +85,23 @@ The roots aspect of roots and wings has to do with gathering, and selling resour
 
 !! -- Bookmark - anything below this needs to get done -- !!
 
-0.8.x - Over planet menu
 
-* create an over planet menu that appears when over a planet
-* press q for quick load / unload or ore
-* press s to buy star port if the player has enough money to buy the planet.
-
-
-!! 1.x - Wings game aspect !!
+!! 0.x - Wings game aspect !!
 
 The wings aspect of the game has to do with going beyond the inner space of planets where the far more valuable outer space of plants is. However the player will begin to run into enemies that become increasingly ore difficult depending on the distance from the home world.
 
+0.8.x - Weapon Class
+
+* Shot class added to be used in weapons class.
+* Weapon Class added for ship, and future enemy objects.
+
+
+0.9.x - Enemy's added, and basic enemy AI
+
 1.x.x - title screen
 1.x.x - ship.js file
-1.x.x - Enemy's added, and basic enemy AI
-1.x.x - Weapon Class
+
+
 1.x.x - ship upgrades
 1.x.x - Jump Ability
 
@@ -123,3 +125,11 @@ x.x.x - Space Sectors
 * The game only loops over planets that are part of that sector
 * coming close to a sector will load planets from that sector
 * going far enough away from a sector will purge it's planets out.
+
+
+x.x.x - Over planet menu
+
+* create an over planet menu that appears when over a planet
+* press q for quick load / unload or ore
+* press s to buy star port if the player has enough money to buy the planet.
+
